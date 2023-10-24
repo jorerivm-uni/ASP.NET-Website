@@ -6,9 +6,9 @@
 <head>
     <meta charset="utf-8" />
     <title>UNI FEC Gym</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Recursos/CSS/animate.css">
-    <link rel="stylesheet" type="text/css" href="Recursos/CSS/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="Recursos/CSS/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="Recursos/CSS/style.css"/>
     <style>
         .wow:first-child {
             visibility: hidden;
@@ -22,7 +22,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <a href="">UNI <span>GYM</span></a>
+                <!--<a href="">UNI <span>GYM</span></a>-->
             </div>
             <a href="javascript:void(0)" class="ham-burger">
                 <span></span>
