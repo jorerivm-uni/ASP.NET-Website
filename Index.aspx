@@ -24,7 +24,7 @@
  <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="Index.aspx">Start Bootstrap</a>
+            <a class="navbar-brand ps-3" href="Index.aspx">Varela Gym</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -113,7 +113,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        Admin 
                     </div>
                 </nav>
             </div>
@@ -169,7 +169,7 @@
                                         <i class="fas fa-chart-area me-1"></i>
                                         Area Chart Example
                                     </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                    <div class="card-body"><canvas id="myAreaChart" width="100" height="40"></canvas></div>
                                 </div>
                             </div>
                             <div class="col-xl-6">
@@ -178,7 +178,7 @@
                                         <i class="fas fa-chart-bar me-1"></i>
                                         Bar Chart Example
                                     </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                    <div class="card-body"><canvas id="myBarChart" width="100" height="40"></canvas></div>
                                 </div>
                             </div>
                         </div>
@@ -675,7 +675,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div class="text-muted">Copyright &copy; Varela Gym 2023</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
