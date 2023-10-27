@@ -29,7 +29,7 @@
         <form id="formulario_login" runat="server">
             <div class="form-control">
                 <div class="row">
-                    <asp:Label class="h2" ID="lblBienvenida" runat="server" Text="Bienvenido/a al Sistema"></asp:Label>
+                    <asp:Label class="h2" ID="lblBienvenida" runat="server" Text="Bienvenido/a Varela Gym"></asp:Label>
                 </div>
                 <div>
                     <asp:Label ID="lblUsuario" runat="server" Text="Usuario:"></asp:Label>
