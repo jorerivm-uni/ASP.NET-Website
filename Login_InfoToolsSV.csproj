@@ -91,6 +91,7 @@
     <Content Include="Recursos\CSS\Estilos.css" />
     <Content Include="Recursos\CSS\style.css" />
     <Content Include="Recursos\CSS\wow.min.js" />
+    <Content Include="VentaWeb.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +131,13 @@
       <DependentUpon>Login_InfoToolsSV.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentaWeb.aspx.cs">
+      <DependentUpon>VentaWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VentaWeb.aspx.designer.cs">
+      <DependentUpon>VentaWeb.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Home.Master" />
