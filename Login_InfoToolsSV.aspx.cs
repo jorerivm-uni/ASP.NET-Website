@@ -39,7 +39,8 @@ namespace Login_InfoToolsSV
                 {
                     //Agregamos una sesion de usuario
                     Session["usuariologueado"] = tbUsuario.Text;
-                    Response.Redirect("Index.aspx");
+                    //Response.Redirect("Index.aspx");
+                    Response.Redirect("PanelGeneral.aspx");
                 }
                 else
                 {
