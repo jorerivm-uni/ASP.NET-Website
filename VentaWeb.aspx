@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="layoutSidenav_content">
+    <!--<div id="layoutSidenav_content">-->
     <main>
         <div class="container-fluid px-4">
             <h1 class="mt-4">Centro de Ventas</h1>
@@ -109,7 +109,7 @@
             </div>
         </div>
     </main>
-</div>
+<!--</div>-->
 
 </asp:Content>
     
