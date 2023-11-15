@@ -13,25 +13,35 @@
 
 
     <div class="field"><h2 class="text-center font-weight-light my-4">Registrar Usuario</h2></div>
-                                    <div class="field">
+                                 <div class="field">
                                         <form>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="usuario" type="text" placeholder="Lewandoski" />
-                                                <label for="usuario">Usuario</label>
+                                                <asp:Label ID="lblUsuario" runat="server" Text="Usuario:"></asp:Label>
+                                                <asp:Textbox runat="server" ID="usuario" CssClass="form-control" type="text" placeholder="Lewandoski" ></asp:Textbox>
                                                 
                                             </div>
+                                            
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="contra" type="text" placeholder="********" />
-                                                <label for="contra">Contraseña</label>
+                                                
+                                                <asp:Label ID="lblPassword" runat="server" Text="Contraseña:"></asp:Label>
+                                                <asp:Textbox runat="server" ID="contra" CssClass="form-control" type="password" placeholder="********" ></asp:Textbox>
+                                                                   
                                             </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="rol" type="text" placeholder="Admin" />
+                                                
+
+                                            <!--<div class="form-floating mb-3">
+                                                <input class="form-control" id="rol" type="number" placeholder="Admin" />
                                                 <label for="rol">Rol</label>
-                                            </div>
+                                            </div>-->
                                             
                                             <div class="mt-4 mb-0">
                                                 
-                                                <div class="d-grid"><a class="btn btn-primary btn-block" runat="server" id="registrar" href="AgregarUsuario.aspx">Registrar</a></div>
+                                                <div class="d-grid">
+                                                    
+                                                    <!--<a class="btn btn-primary btn-block" runat="server" id="registrar" Onclick="RegistrarClick" href="AgregarUsuario.aspx">Registrar</a>-->
+                                                    <asp:Button runat="server" ID="ingresa" CssClass="button is-link" OnClick="RegistarClick"  Text="Enviar" />
+                                                </div>
+
                                             </div>
                                         </form>
                                     </div>
