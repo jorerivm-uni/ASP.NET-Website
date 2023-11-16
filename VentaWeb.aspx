@@ -61,7 +61,7 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-chart-bar me-1"></i>
-                            Historico Ventas 
+                            Historico Inventario 
                         </div>
                         <div class="card-body"><canvas id="myBarChart" width="100" height="40"></canvas></div>
                     </div>
@@ -70,7 +70,7 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Numero de Ventas
+                    Historico de Ventas
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
