@@ -13,8 +13,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <main>
-        <div class="container-fluid px-4">
+  
+        <div class="container ">
             <h1 class="mt-4">Panel General</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Acciones Rapidas</li>
@@ -232,7 +232,7 @@
                 </div>
             </div>
         </div>
-    </main><!--fin main-->
+    
 
     
    
