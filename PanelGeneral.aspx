@@ -7,11 +7,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 
         <!-- poner script y stilos para algunos controles, css,javascript-->
+    
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
     <p>hola mundo</p>
+
+    
+   
+      
+
 
 </asp:Content>

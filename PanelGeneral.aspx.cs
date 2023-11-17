@@ -11,7 +11,20 @@ namespace Login_InfoToolsSV
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.AppendHeader("Cache-control", "no-store");
+
+          
 
         }
+
+       
+
+
+
     }
+
+
+
+
+
 }
