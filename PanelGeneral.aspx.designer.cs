@@ -13,5 +13,14 @@ namespace Login_InfoToolsSV
 
     public partial class PanelGeneral
     {
+
+        /// <summary>
+        /// datatablesSimple control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable datatablesSimple;
     }
 }
