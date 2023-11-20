@@ -22,7 +22,7 @@ namespace Login_InfoToolsSV
         private void LlenarTabla()
         {
             // Conexión a la base de datos
-            string connectionString = "Data Source=LEGION;initial catalog=InfoToolsSV;integrated security=true";
+            string connectionString = "Data Source=LAPTOP-V667GKAG;initial catalog=InfoToolsSV;integrated security=true";
             using (SqlConnection conexion = new SqlConnection(connectionString))
             {
                 // Consulta SQL para obtener datos de la tabla
