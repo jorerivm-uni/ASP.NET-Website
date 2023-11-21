@@ -20,11 +20,7 @@
 </head>
 <body class="sb-nav-fixed">
 
-<<<<<<< HEAD
    
-=======
-  
->>>>>>> c6b2a609814bb15c9bde7d47fc605f60a05378b6
        <<header>
            <!-- comienzo Navbar de arriba-->
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -179,11 +175,7 @@
                                  </asp:ContentPlaceHolder>
                               </div>
                                
-<<<<<<< HEAD
                          </form>
-=======
-                        </form>
->>>>>>> c6b2a609814bb15c9bde7d47fc605f60a05378b6
                     </div>
                 </main><!--fin main--> <!--comienzo footer-->
                 <footer class="py-4 bg-light mt-auto">
@@ -200,11 +192,7 @@
                 </footer> <!--fin footer-->
             </div><!--panel lado derecho fin-->
         </div><!--fin barra lateral-->
-<<<<<<< HEAD
   
-=======
-   <!--</form>-->
->>>>>>> c6b2a609814bb15c9bde7d47fc605f60a05378b6
           
 
         
