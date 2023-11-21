@@ -42,6 +42,7 @@ namespace Login_InfoToolsSV
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Limpiar();
+                Response.Redirect("PanelGeneral.aspx");
 
             }
             catch (Exception)

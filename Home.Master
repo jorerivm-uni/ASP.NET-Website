@@ -20,7 +20,7 @@
 </head>
 <body class="sb-nav-fixed">
 
-   <form id="form1" runat="server">
+  
        <<header>
            <!-- comienzo Navbar de arriba-->
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -44,7 +44,7 @@
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><asp:Button Text="LogOut" runat="server" Class="dropdown-item" OnClick="Salir"/></li>
+                        <li></li>
                     </ul>
                 </li>
             </ul>
@@ -168,14 +168,14 @@
                         <!--<ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active"> </li>
                         </ol>-->
-                           
+                           <form id="form1" runat="server">
                               <div>
                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                                  <!--parte dinamica, cargar disenos de pagina-->
                                  </asp:ContentPlaceHolder>
                               </div>
                                
-                        
+                        </form>
                     </div>
                 </main><!--fin main--> <!--comienzo footer-->
                 <footer class="py-4 bg-light mt-auto">
@@ -192,7 +192,7 @@
                 </footer> <!--fin footer-->
             </div><!--panel lado derecho fin-->
         </div><!--fin barra lateral-->
-   </form>
+   <!--</form>-->
           
 
         
