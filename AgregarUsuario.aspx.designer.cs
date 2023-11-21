@@ -15,6 +15,15 @@ namespace Login_InfoToolsSV
     {
 
         /// <summary>
+        /// lbltitulo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbltitulo;
+
+        /// <summary>
         /// lblUsuario control.
         /// </summary>
         /// <remarks>
@@ -60,12 +69,48 @@ namespace Login_InfoToolsSV
         protected global::System.Web.UI.HtmlControls.HtmlAnchor registrar;
 
         /// <summary>
-        /// ingresa control.
+        /// btningresa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ingresa;
+        protected global::System.Web.UI.WebControls.Button btningresa;
+
+        /// <summary>
+        /// btnactualizar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnactualizar;
+
+        /// <summary>
+        /// btnborrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnborrar;
+
+        /// <summary>
+        /// btnvolver control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnvolver;
+
+        /// <summary>
+        /// datos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView datos;
     }
 }

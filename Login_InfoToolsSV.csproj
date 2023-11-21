@@ -93,6 +93,7 @@
     <Content Include="Recursos\CSS\wow.min.js" />
     <Content Include="VentaNueva.aspx" />
     <Content Include="VentaWeb.aspx" />
+    <Content Include="VerUsuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +146,13 @@
     </Compile>
     <Compile Include="VentaWeb.aspx.designer.cs">
       <DependentUpon>VentaWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerUsuario.aspx.cs">
+      <DependentUpon>VerUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerUsuario.aspx.designer.cs">
+      <DependentUpon>VerUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

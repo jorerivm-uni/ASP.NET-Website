@@ -12,7 +12,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
+    
   
         <div class="container ">
             <h1 class="mt-4">Panel General</h1>
@@ -110,6 +110,8 @@
                     </table>
                 </div>
             </div>
+           
+
         </div>
     
 
