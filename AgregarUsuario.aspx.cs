@@ -117,8 +117,12 @@ namespace Login_InfoToolsSV
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Limpiar();
+<<<<<<< HEAD
                 Response.Redirect("VerUsuario.aspx");
                 //Response.Write("<script>alert('usuario agregado')</script>");
+=======
+                Response.Redirect("PanelGeneral.aspx");
+>>>>>>> c6b2a609814bb15c9bde7d47fc605f60a05378b6
 
             }
             catch (Exception)
