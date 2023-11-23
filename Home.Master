@@ -44,7 +44,7 @@
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li></li>
+                        <li><!-- salir va aca--></li>
                     </ul>
                 </li>
             </ul>
@@ -73,7 +73,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="VerUsuario.aspx">Ver Usuarios</a>
+                                    <a class="nav-link" href="VerProveedor.aspx">Proveedores</a>
                                    
                                     <!--<a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>-->
                                 </nav>
@@ -87,7 +87,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#!">Agregar Producto</a>
+                                    <a class="nav-link" href="#!">Productos</a>
                                    
                                     <!--<a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>-->
                                 </nav>

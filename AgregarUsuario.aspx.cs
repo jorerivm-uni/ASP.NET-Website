@@ -67,12 +67,7 @@ namespace Login_InfoToolsSV
 
                     }//
 
-
-
-
                 }//
-
-
 
             }//
 
@@ -131,25 +126,7 @@ namespace Login_InfoToolsSV
         
         } //fin metodo click
 
-        /*
-        protected void Actualizar()
-        {
-            Response.Redirect("VerUsuario.aspx");
-        }
-
-        protected void Borrar()
-        {
-            SqlCommand cmd = new SqlCommand("SP_Borrar", con);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = sID;
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-            Limpiar();
-            Response.Redirect("VerUsuario.aspx");
-        }
-        */
-       
+           
 
         protected void btnactualizar_Click(object sender, EventArgs e)
         {
