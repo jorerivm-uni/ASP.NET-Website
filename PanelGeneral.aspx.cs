@@ -20,7 +20,8 @@ namespace Login_InfoToolsSV
             }
         }
         private void LlenarTabla()
-        {
+        {/*
+            
             // Conexión a la base de datos
             string connectionString = "Data Source=Legion;initial catalog=InfoToolsSV;integrated security=true";
             using (SqlConnection conexion = new SqlConnection(connectionString))
@@ -65,7 +66,12 @@ namespace Login_InfoToolsSV
                 // Cierra la conexión
                 lector.Close();
                 conexion.Close();
-            }
+            }*/
         }
+
+
+
+
+        
     }
 }
