@@ -85,5 +85,8 @@ namespace Login_InfoToolsSV
             gvproveedor.DataBind();
             con.Close();
         }
+
+
+
     }
 }

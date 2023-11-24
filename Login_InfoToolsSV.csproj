@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarUsuario.aspx" />
+    <Content Include="Categoria.aspx" />
     <Content Include="PanelGeneral.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Login_InfoToolsSV.aspx" />
@@ -94,6 +95,7 @@
     <Content Include="Recursos\CSS\wow.min.js" />
     <Content Include="VentaNueva.aspx" />
     <Content Include="VentaWeb.aspx" />
+    <Content Include="VerCategoria.aspx" />
     <Content Include="VerProveedor.aspx" />
     <Content Include="VerUsuario.aspx" />
     <Content Include="Web.config" />
@@ -105,6 +107,13 @@
     </Compile>
     <Compile Include="AgregarUsuario.aspx.designer.cs">
       <DependentUpon>AgregarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categoria.aspx.cs">
+      <DependentUpon>Categoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categoria.aspx.designer.cs">
+      <DependentUpon>Categoria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.Master.cs">
       <DependentUpon>Home.Master</DependentUpon>
@@ -155,6 +164,13 @@
     </Compile>
     <Compile Include="VentaWeb.aspx.designer.cs">
       <DependentUpon>VentaWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerCategoria.aspx.cs">
+      <DependentUpon>VerCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCategoria.aspx.designer.cs">
+      <DependentUpon>VerCategoria.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerProveedor.aspx.cs">
       <DependentUpon>VerProveedor.aspx</DependentUpon>
