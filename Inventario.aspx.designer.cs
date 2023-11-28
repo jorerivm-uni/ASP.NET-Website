@@ -11,70 +11,79 @@ namespace Login_InfoToolsSV
 {
 
 
-    public partial class Categoria
+    public partial class Inventario
     {
 
         /// <summary>
-        /// lbltitulo control.
+        /// lblbuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltitulo;
+        protected global::System.Web.UI.WebControls.Label lblbuscar;
 
         /// <summary>
-        /// lblCategoria control.
+        /// select1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategoria;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect select1;
 
         /// <summary>
-        /// categoria control.
+        /// opcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox categoria;
+        protected global::System.Web.UI.WebControls.Button opcion;
 
         /// <summary>
-        /// btningresa control.
+        /// txtnombrebus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btningresa;
+        protected global::System.Web.UI.WebControls.TextBox txtnombrebus;
 
         /// <summary>
-        /// btnactualizar control.
+        /// btnbuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnactualizar;
+        protected global::System.Web.UI.WebControls.Button btnbuscar;
 
         /// <summary>
-        /// btnborrar control.
+        /// txtbuscanombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnborrar;
+        protected global::System.Web.UI.WebControls.TextBox txtbuscanombre;
 
         /// <summary>
-        /// btnvolver control.
+        /// btnbuscarnombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnvolver;
+        protected global::System.Web.UI.WebControls.Button btnbuscarnombre;
+
+        /// <summary>
+        /// gvproducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvproducto;
     }
 }

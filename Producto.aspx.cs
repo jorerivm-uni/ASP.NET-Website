@@ -10,13 +10,16 @@ using System.Web.UI.WebControls;
 
 namespace Login_InfoToolsSV
 {
-    public partial class Categoria : System.Web.UI.Page
+    public partial class Producto : System.Web.UI.Page
+
+
     {
 
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
 
         public static string sID = "-1";
         public static string sOpc = "";
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,17 +40,23 @@ namespace Login_InfoToolsSV
                     switch (sOpc)
                     {
                         case "C":
-                            this.lbltitulo.Text = "Ingresar nueva categoria";
+                            this.lbltitulo.Text = "Ingresar nuevo productos";
                             this.btningresa.Visible = true;
                             break;
-                        
+
+                        case "R":
+                            this.lbltitulo.Text = "Consulta de producto";
+                            this.lblid.Visible = true;
+                            this.id.Visible = true;
+                            break;
+
                         case "U":
-                            this.lbltitulo.Text = "Modificar categoria";
+                            this.lbltitulo.Text = "Modificar producto";
                             this.btnactualizar.Visible = true;
                             break;
 
                         case "D":
-                            this.lbltitulo.Text = "Eliminar categoria";
+                            this.lbltitulo.Text = "Eliminar producto";
                             this.btnborrar.Visible = true;
                             break;
 
@@ -59,13 +68,12 @@ namespace Login_InfoToolsSV
             }//
 
 
-
-        }//pageload
+        }
 
         void CargarDatos()
         {
             con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SP_LeerCategoria", con);
+            SqlDataAdapter da = new SqlDataAdapter("SP_LeerProducto", con);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@Id", SqlDbType.Int).Value = sID;
             DataSet ds = new DataSet();
@@ -73,47 +81,66 @@ namespace Login_InfoToolsSV
             da.Fill(ds);
             DataTable dt = ds.Tables[0];
             DataRow row = dt.Rows[0];
-            categoria.Text = row[1].ToString();
+            id.Text = row[0].ToString();
+            nombre.Text = row[1].ToString();
+            descripcion.Text = row[2].ToString();
+            categoria.Text = row[3].ToString();
+            stock.Text = row[4].ToString();
+            precio.Text = row[5].ToString();
+            DateTime d = (DateTime)row[6];
+            fecha.Text = d.ToString("dd/MM/yyyy");
             con.Close();
         }
 
+
+
         protected void btningresa_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SP_AddCategoria", con);
+            SqlCommand cmd = new SqlCommand("SP_AddProducto", con);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.Add("@Descripcion", System.Data.SqlDbType.VarChar).Value = categoria.Text;
+            cmd.Parameters.Add("@Nombre", System.Data.SqlDbType.VarChar).Value = nombre.Text;
+            cmd.Parameters.Add("@Descripcion", System.Data.SqlDbType.VarChar).Value = descripcion.Text;
+            cmd.Parameters.Add("@Categoria", System.Data.SqlDbType.VarChar).Value = categoria.Text;
+            cmd.Parameters.Add("@Stock", System.Data.SqlDbType.Int).Value = stock.Text;
+            cmd.Parameters.Add("@Precio", System.Data.SqlDbType.Decimal).Value = precio.Text;
+            cmd.Parameters.Add("@Fecha", System.Data.SqlDbType.Date).Value = fecha.Text;
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            Response.Redirect("VerCategoria.aspx");
+            Response.Redirect("VerProducto.aspx");
         }
 
         protected void btnactualizar_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SP_ActuaCategoria", con);
-            con.Open();
+            SqlCommand cmd = new SqlCommand("SP_ActuaProducto", con);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = sID;
-            cmd.Parameters.Add("@Descripcion", System.Data.SqlDbType.VarChar).Value = categoria.Text;
+            cmd.Parameters.Add("@Nombre", System.Data.SqlDbType.VarChar).Value = nombre.Text;
+            cmd.Parameters.Add("@Descripcion", System.Data.SqlDbType.VarChar).Value = descripcion.Text;
+            cmd.Parameters.Add("@Categoria", System.Data.SqlDbType.VarChar).Value = categoria.Text;
+            cmd.Parameters.Add("@Stock", System.Data.SqlDbType.Int).Value = stock.Text;
+            cmd.Parameters.Add("@Precio", System.Data.SqlDbType.Decimal).Value = precio.Text;
+            cmd.Parameters.Add("@Fecha", System.Data.SqlDbType.Date).Value = fecha.Text;
+            con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            Response.Redirect("VerCategoria.aspx");
+            Response.Redirect("VerProducto.aspx");
         }
 
         protected void btnborrar_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SP_BorrarCategoria", con);
+            SqlCommand cmd = new SqlCommand("SP_BorrarProducto", con);
             con.Open();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = sID;
             cmd.ExecuteNonQuery();
             con.Close();
-            Response.Redirect("VerCategoria.aspx");
+            Response.Redirect("VerProducto.aspx");
         }
 
         protected void btnvolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VerCategoria.aspx");
+            Response.Redirect("VerProducto.aspx");
         }
     }
 }

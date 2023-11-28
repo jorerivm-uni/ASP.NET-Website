@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -54,10 +55,7 @@ namespace Login_InfoToolsSV
                             this.lbltitulo.Text = "Consulta de usuario";
                             break;
 
-                        case "U":
-                            this.lbltitulo.Text = "Modificar usuario";
-                            this.btnactualizar.Visible = true;
-                            break;
+                        
 
                         case "D":
                             this.lbltitulo.Text = "Eliminar usuario";
@@ -77,7 +75,7 @@ namespace Login_InfoToolsSV
         void CargarDatos()
         {
             con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SP_Leer", con);
+            SqlDataAdapter da = new SqlDataAdapter("SP_LeerUsuario", con);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@Id", SqlDbType.Int).Value = sID;
             DataSet ds = new DataSet();
@@ -128,14 +126,14 @@ namespace Login_InfoToolsSV
 
            
 
-        protected void btnactualizar_Click(object sender, EventArgs e)
+       /* protected void btnactualizar_Click(object sender, EventArgs e)
         {
             Response.Redirect("VerUsuario.aspx");
-        }
+        }*/
 
         protected void btnborrar_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SP_Borrar", con);
+            SqlCommand cmd = new SqlCommand("SP_BorrarUsuario", con);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = sID;
             con.Open();
@@ -151,28 +149,7 @@ namespace Login_InfoToolsSV
         }
 
 
-        /*
-            void Datos()
-            {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("SP_DatosUser", con);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    con.Open();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    datos.DataSource = dt;
-                    datos.DataBind();
-                    con.Close();
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
-
-            */
+       
 
 
 

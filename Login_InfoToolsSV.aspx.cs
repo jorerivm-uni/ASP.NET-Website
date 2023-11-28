@@ -39,8 +39,8 @@ namespace Login_InfoToolsSV
                     if (dr.Read())
                     {
                         //Agregamos una sesion de usuario y rol
-                        Session["idRol"] = dr[3].ToString();
-                        Session["Usuario"] = dr[1].ToString();
+                       // Session["idRol"] = dr[3].ToString();
+                        //Session["Usuario"] = dr[1].ToString();
                         //Session["idRol"] = dr[1].ToString();
 
                         //Agregamos una sesion de usuario
