@@ -76,22 +76,20 @@
                     <table id="datatablesSimple" runat="server">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>Codigo</th>
+                                <th>Marca</th>
+                                <th>Descripcion</th>
+                                <th>Stock</th>
+                                <th>Precio</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>Codigo</th>
+                                <th>Marca</th>
+                                <th>Descripcion</th>
+                                <th>Stock</th>
+                                <th>Precio</th>
                             </tr>
                         </tfoot>
                         <tbody>

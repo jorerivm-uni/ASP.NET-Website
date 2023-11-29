@@ -15,15 +15,6 @@ namespace Login_InfoToolsSV
     {
 
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
         /// gridProductos control.
         /// </summary>
         /// <remarks>
@@ -42,6 +33,15 @@ namespace Login_InfoToolsSV
         protected global::System.Web.UI.WebControls.DropDownList ddlProductos;
 
         /// <summary>
+        /// txtCantidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCantidad;
+
+        /// <summary>
         /// btnAgregar control.
         /// </summary>
         /// <remarks>
@@ -49,6 +49,15 @@ namespace Login_InfoToolsSV
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregar;
+
+        /// <summary>
+        /// gridCarrito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridCarrito;
 
         /// <summary>
         /// btnRealizarVenta control.
