@@ -12,13 +12,21 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <!--<div class="field"><h2 class="text-center font-weight-light my-4">Registrar Usuario</h2></div>-->
-    <!--titulo-->
-    <div class="mx-auto" style="width:250px">
-        <asp:Label runat="server" CssClass="h2" ID="lbltitulo"></asp:Label>
-    </div>
-                                 <div class="field">
+   
+
+    <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                             <div class="card-header">
+                                 <h3 class="text-center font-weight-light my-4">
+                                   <asp:Label runat="server" ID="lbltitulo"></asp:Label>
+                                 </h3>
+                           
+                              </div>
+                                 <div class="card-body">
                                         <form>
+
                                             <div class="form-floating mb-3">
                                                 <asp:Label ID="lblUsuario" runat="server" Text="Usuario:"></asp:Label>
                                                 <asp:Textbox runat="server" ID="usuario" CssClass="form-control" type="text" placeholder="Lewandoski" ></asp:Textbox>
@@ -33,29 +41,28 @@
                                             </div>
                                                 
 
-                                            <!--<div class="form-floating mb-3">
-                                                <input class="form-control" id="rol" type="number" placeholder="Admin" />
-                                                <label for="rol">Rol</label>
-                                            </div>-->
-                                            
-                                           <!-- <div class="mt-4 mb-0">
-                                                
-                                                <div class="d-grid">-->
-                                                    
-                                                    <!--<a class="btn btn-primary btn-block" runat="server" id="registrar" Onclick="RegistrarClick" href="AgregarUsuario.aspx">Registrar</a>-->
+                                           
                                                     <asp:Button runat="server" ID="btningresa" CssClass="btn btn-success form-control-sm" OnClick="RegistarClick"  Text="Crear" Visible="false" />
-                                                    <asp:Button runat="server" ID="btnactualizar" CssClass="btn form-control-sm btn-warning" Text="Actualizar" visible="false" OnClick="btnactualizar_Click"/>
+                                                    
                                                     <asp:Button runat="server" ID="btnborrar" CssClass="btn form-control-sm btn-danger"  Text="Borrar" visible="false" OnClick="btnborrar_Click"/>
                                                     <asp:Button runat="server" ID="btnvolver" CssClass="btn form-control-sm btn-dark" Text="Volver" visible="true" OnClick="btnvolver_Click"/>
-                                               <!-- </div>
+                                              
+                                                     
 
-                                            </div>-->
+ 
+                                               
+                                          
                                         </form>
-                                    </div>
+                                     </div> <!--fin card body-->  
 
-    <!--<asp:GridView class="table text-center mx-auto" runat="server" ID="datos" Width="100%">
+                         </div>
+                    </div>
+                </div>
+            </div>
 
-    </asp:GridView>-->
+                                
+
+    
 
 
 </asp:Content>

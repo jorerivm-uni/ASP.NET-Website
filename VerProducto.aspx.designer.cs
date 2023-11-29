@@ -11,7 +11,7 @@ namespace Login_InfoToolsSV
 {
 
 
-    public partial class VerCategoria
+    public partial class VerProducto
     {
 
         /// <summary>
@@ -22,6 +22,24 @@ namespace Login_InfoToolsSV
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblbuscar;
+
+        /// <summary>
+        /// select1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect select1;
+
+        /// <summary>
+        /// opcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button opcion;
 
         /// <summary>
         /// txtnombrebus control.
@@ -42,6 +60,24 @@ namespace Login_InfoToolsSV
         protected global::System.Web.UI.WebControls.Button btnbuscar;
 
         /// <summary>
+        /// txtbuscamarca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbuscamarca;
+
+        /// <summary>
+        /// btnbuscarmarca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnbuscarmarca;
+
+        /// <summary>
         /// BtnCreate control.
         /// </summary>
         /// <remarks>
@@ -51,12 +87,12 @@ namespace Login_InfoToolsSV
         protected global::System.Web.UI.WebControls.Button BtnCreate;
 
         /// <summary>
-        /// gvcategoria control.
+        /// gvproducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvcategoria;
+        protected global::System.Web.UI.WebControls.GridView gvproducto;
     }
 }

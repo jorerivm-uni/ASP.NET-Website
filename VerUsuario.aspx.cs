@@ -50,7 +50,7 @@ namespace Login_InfoToolsSV
             Response.Redirect("AgregarUsuario.aspx?id="+id+"&op=R");
         }
 
-        protected void BtnActualizar_Click(object sender, EventArgs e)
+       /* protected void BtnActualizar_Click(object sender, EventArgs e)
         {
             string id;
             Button BtnConsultar = (Button)sender;
@@ -58,7 +58,7 @@ namespace Login_InfoToolsSV
             id = selectedrow.Cells[1].Text;
 
             Response.Redirect("AgregarUsuario.aspx?id="+id+"&op=U");
-        }
+        }*/
 
         protected void BtnBorrar_Click(object sender, EventArgs e)
         {
