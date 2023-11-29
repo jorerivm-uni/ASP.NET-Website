@@ -1,0 +1,139 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+
+namespace Login_InfoToolsSV
+{
+    public partial class CompraNueva : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                CargarProductos();
+                DataTable dtCarrito = (DataTable)Session["Carrito"];
+                if (dtCarrito != null)
+                {
+                    gridCarrito.DataSource = dtCarrito;
+                    gridCarrito.DataBind();
+                }
+            }
+        }
+        protected void CargarProductos()
+        {
+            // Código para obtener los productos desde la base de datos
+            // Conexión a la base de datos
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consulta = "SELECT IdProducto, Marca, Descripcion, IdCategoria, Stock, Precio, FechaRegistro FROM Producto";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                DataTable tablaProductos = new DataTable();
+
+                conexion.Open();
+                adaptador.Fill(tablaProductos);
+                conexion.Close();
+
+                // Mostrar productos en el GridView
+                gridProductos.DataSource = tablaProductos;
+                gridProductos.DataBind();
+
+                //Mostrar productos en el DropDownList para venta
+                ddlProductos.DataSource = tablaProductos;
+                //ddlProductos.DataTextField = "ID";
+                ddlProductos.DataValueField = "IdProducto";
+                //ddlProductos.DataTextField = "Nombre";
+                //ddlProductos.DataValueField = "descripcion";
+                /*ddlProductos.DataTextField = "Disponible";
+                ddlProductos.DataValueField = "stock";
+                ddlProductos.DataTextField = "Precio";
+                ddlProductos.DataValueField = "precio";*/
+                ddlProductos.DataBind();
+            }
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = ddlProductos.SelectedIndex;
+
+            if (selectedIndex >= 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                string productId = gridProductos.Rows[selectedIndex].Cells[0].Text; // ID
+                string productMarca = gridProductos.Rows[selectedIndex].Cells[1].Text; // Marca
+                string productName = gridProductos.Rows[selectedIndex].Cells[2].Text; // Nombre
+                int categoria = Convert.ToInt32(gridProductos.Rows[selectedIndex].Cells[3].Text); // Cat
+                int stock = Convert.ToInt32(gridProductos.Rows[selectedIndex].Cells[4].Text); // Stock
+                decimal price = Convert.ToDecimal(gridProductos.Rows[selectedIndex].Cells[5].Text); // Precio
+                DateTime fechaRegistro = Convert.ToDateTime(gridProductos.Rows[selectedIndex].Cells[6].Text); // Fecha Registro
+
+                // Obtener la cantidad del TextBox txtCantidad
+                int quantity = Convert.ToInt32(txtCantidad.Text);
+
+                // Crear una DataTable si no existe
+                DataTable dtCarrito = (DataTable)Session["Carrito"];
+                if (dtCarrito == null)
+                {
+                    dtCarrito = new DataTable();
+                    dtCarrito.Columns.AddRange(new DataColumn[8] { new DataColumn("ID"), new DataColumn("Marca"), new DataColumn("Nombre"), new DataColumn("Categoria"), new DataColumn("Cantidad"), new DataColumn("Precio"), new DataColumn("Fecha"), new DataColumn("Sub-Total") });
+                    Session["Carrito"] = dtCarrito;
+                }
+
+                // Agregar el producto al carrito
+                DataRow dr = dtCarrito.NewRow();
+                dr["ID"] = productId;
+                dr["Marca"] = productMarca;
+                dr["Nombre"] = productName;
+                dr["categoria"] = categoria;
+                dr["Cantidad"] = quantity;
+                dr["Fecha"] = fechaRegistro;
+                dr["Precio"] = price;
+                decimal subtotal = price * quantity;
+                dr["Sub-Total"] = subtotal;
+
+                dtCarrito.Rows.Add(dr);
+
+                // Actualizar el gridCarrito
+                gridCarrito.DataSource = dtCarrito;
+                gridCarrito.DataBind();
+                
+                // Actualizar la sesión con el DataTable modificado
+                Session["Carrito"] = dtCarrito;
+
+            }
+        }
+        protected void btnRealizarVenta_Click(object sender, EventArgs e)
+        {
+            string connectionString = "tu_cadena_de_conexion"; // Reemplaza con tu conexión real
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_ActuaProducto", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Establece los parámetros del Stored Procedure
+                    command.Parameters.Add("@Id", SqlDbType.Int).Value = "ID";
+                    command.Parameters.Add("@Marca", SqlDbType.VarChar, 100).Value = "Marca";
+                    command.Parameters.Add("@Descripcion", SqlDbType.VarChar, 200).Value = "Nombre";
+                    command.Parameters.Add("@Categoria", SqlDbType.VarChar, 100).Value = "Categoria";
+                    command.Parameters.Add("@Stock", SqlDbType.Int).Value = "Stock";
+                    command.Parameters.Add("@Precio", SqlDbType.Decimal).Value = "Precio";
+                    command.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = "Fecha";
+
+                    // Abre la conexión y ejecuta el Stored Procedure
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+    }
+}
