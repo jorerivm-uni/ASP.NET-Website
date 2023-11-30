@@ -18,7 +18,10 @@ namespace Login_InfoToolsSV
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             Response.AppendHeader("Cache-control", "no-store");
+
+          
 
             DatosProveedores();
         }
@@ -86,7 +89,11 @@ namespace Login_InfoToolsSV
             con.Close();
         }
 
-
-
+        protected void Btnsalir_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Login_InfoToolsSV.aspx");
+            HttpContext.Current.Session.Abandon();
+        }
     }
 }

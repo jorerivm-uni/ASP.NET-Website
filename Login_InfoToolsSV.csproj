@@ -68,11 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarUsuario.aspx" />
+    <Content Include="AvisoError.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Graficas.aspx" />
     <Content Include="Inventario.aspx" />
     <Content Include="PanelGeneral.aspx" />
-    <Content Include="Index.aspx" />
     <Content Include="Login_InfoToolsSV.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="Proveedor.aspx" />
@@ -111,6 +111,13 @@
     <Compile Include="AgregarUsuario.aspx.designer.cs">
       <DependentUpon>AgregarUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AvisoError.aspx.cs">
+      <DependentUpon>AvisoError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AvisoError.aspx.designer.cs">
+      <DependentUpon>AvisoError.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -145,13 +152,6 @@
     </Compile>
     <Compile Include="PanelGeneral.aspx.designer.cs">
       <DependentUpon>PanelGeneral.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login_InfoToolsSV.aspx.cs">
       <DependentUpon>Login_InfoToolsSV.aspx</DependentUpon>

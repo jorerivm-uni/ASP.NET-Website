@@ -9,6 +9,7 @@ namespace Login_InfoToolsSV
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.AppendHeader("Cache-control", "no-store");
 
         }
 
@@ -38,14 +39,12 @@ namespace Login_InfoToolsSV
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
-                        //Agregamos una sesion de usuario y rol
-                       // Session["idRol"] = dr[3].ToString();
-                        //Session["Usuario"] = dr[1].ToString();
-                        //Session["idRol"] = dr[1].ToString();
+                        //Agregamos una sesion de usuario 
+                       
+                        Session["Usuario"] = dr[1].ToString();
+                        
 
-                        //Agregamos una sesion de usuario
-                        //Session["usuariologueado"] = tbUsuario.Text;
-                        //Response.Redirect("Index.aspx");
+                        
                         Response.Redirect("PanelGeneral.aspx");
                     }
                     else

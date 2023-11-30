@@ -90,13 +90,12 @@ namespace Login_InfoToolsSV
             return strDatos;
         }
 
-
-
-
-
-
-
-
+        protected void Btnsalir_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Login_InfoToolsSV.aspx");
+            HttpContext.Current.Session.Abandon();
+        }
     }//
 
 
