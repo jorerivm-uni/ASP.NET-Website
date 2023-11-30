@@ -21,8 +21,12 @@ namespace Login_InfoToolsSV
             Response.AppendHeader("Cache-control", "no-store");
             DatosProductos();
 
-           
 
+            /* if (Session["Usuario"] == null)
+            {
+                Response.Redirect("AvisoError.aspx");
+            }
+           */
 
         }
 
@@ -132,6 +136,13 @@ namespace Login_InfoToolsSV
             gvproducto.DataSource = dt;
             gvproducto.DataBind();
             con.Close();
+        }
+
+        protected void Btnsalir_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Login_InfoToolsSV.aspx");
+            HttpContext.Current.Session.Abandon();
         }
     }
 }
