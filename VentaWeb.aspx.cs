@@ -21,11 +21,11 @@ namespace Login_InfoToolsSV
         private void LlenarTabla()
         {
             // Conexión a la base de datos
-            string connectionString = "Data Source=LEGION;initial catalog=InfoToolsSV;integrated security=true";
+            string connectionString = "Data Source=LAPTOP-V667GKAG;initial catalog=DBvarelaGym;integrated security=true";
             using (SqlConnection conexion = new SqlConnection(connectionString))
             {
                 // Consulta SQL para obtener datos de la tabla
-                string consulta = "SELECT  codigo, marca, descripcion, stock, precio FROM Producto";
+                string consulta = "SELECT  Idproducto, nombre, descripcion, stock, precio FROM Producto";
                 SqlCommand comando = new SqlCommand(consulta, conexion);
 
                 // Abre la conexión y ejecuta la consulta
@@ -42,11 +42,11 @@ namespace Login_InfoToolsSV
                     //fila.Cells.Add(celdaID);
 
                     HtmlTableCell celdaCodigo = new HtmlTableCell();
-                    celdaCodigo.InnerText = lector["codigo"].ToString();
+                    celdaCodigo.InnerText = lector["Idproducto"].ToString();
                     fila.Cells.Add(celdaCodigo);
 
                     HtmlTableCell celdaMarca = new HtmlTableCell();
-                    celdaMarca.InnerText = lector["marca"].ToString();
+                    celdaMarca.InnerText = lector["nombre"].ToString();
                     fila.Cells.Add(celdaMarca);
 
                     HtmlTableCell celdaDescripcion = new HtmlTableCell();
@@ -69,6 +69,13 @@ namespace Login_InfoToolsSV
                 lector.Close();
                 conexion.Close();
             }
+        }
+
+        protected void Btnsalir_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Login_InfoToolsSV.aspx");
+            HttpContext.Current.Session.Abandon();
         }
     }
 }
