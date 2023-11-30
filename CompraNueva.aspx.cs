@@ -138,6 +138,10 @@ namespace Login_InfoToolsSV
 
             // Limpia el carrito después de realizar la venta
             LimpiarCarrito();
+            CargarProductos();
+            txtCantidad.Text = "";
+            TotalCompra.Text = "";
+            ddlProductos.SelectedIndex = 0;
         }
         protected decimal CalcularTotalVenta()
         {
