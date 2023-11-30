@@ -63,7 +63,7 @@ namespace Login_InfoToolsSV
                 string productId = gridProductos.Rows[selectedIndex].Cells[0].Text; // ID
                 string productMarca = gridProductos.Rows[selectedIndex].Cells[1].Text; // Marca
                 string productName = gridProductos.Rows[selectedIndex].Cells[2].Text; // Nombre
-                int categoria = Convert.ToInt32(gridProductos.Rows[selectedIndex].Cells[3].Text); // Cat
+                string categoria = (gridProductos.Rows[selectedIndex].Cells[3].Text); // Cat
                 int stock = Convert.ToInt32(gridProductos.Rows[selectedIndex].Cells[4].Text); // Stock
                 decimal price = Convert.ToDecimal(gridProductos.Rows[selectedIndex].Cells[5].Text); // Precio
                 DateTime fechaRegistro = Convert.ToDateTime(gridProductos.Rows[selectedIndex].Cells[6].Text); // Fecha Registro

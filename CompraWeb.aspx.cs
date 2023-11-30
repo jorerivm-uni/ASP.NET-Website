@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -21,11 +22,11 @@ namespace Login_InfoToolsSV
         private void LlenarTabla()
         {
             // Conexión a la base de datos
-            string connectionString = "Data Source=LEGION;initial catalog=DBvarelaGym;integrated security=true";
-            using (SqlConnection conexion = new SqlConnection(connectionString))
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
                 // Consulta SQL para obtener datos de la tabla
-                string consulta = "SELECT  codigo, marca, descripcion, stock, precio FROM Producto";
+                string consulta = "SELECT  IdProducto, Nombre, Descripcion, Stock, Precio FROM Producto";
                 SqlCommand comando = new SqlCommand(consulta, conexion);
 
                 // Abre la conexión y ejecuta la consulta
@@ -42,24 +43,24 @@ namespace Login_InfoToolsSV
                     //fila.Cells.Add(celdaID);
 
                     HtmlTableCell celdaCodigo = new HtmlTableCell();
-                    celdaCodigo.InnerText = lector["codigo"].ToString();
+                    celdaCodigo.InnerText = lector["IdProducto"].ToString();
                     fila.Cells.Add(celdaCodigo);
 
                     HtmlTableCell celdaMarca = new HtmlTableCell();
-                    celdaMarca.InnerText = lector["marca"].ToString();
+                    celdaMarca.InnerText = lector["Nombre"].ToString();
                     fila.Cells.Add(celdaMarca);
 
                     HtmlTableCell celdaDescripcion = new HtmlTableCell();
-                    celdaDescripcion.InnerText = lector["descripcion"].ToString();
+                    celdaDescripcion.InnerText = lector["Descripcion"].ToString();
                     fila.Cells.Add(celdaDescripcion);
 
 
                     HtmlTableCell celdaStock = new HtmlTableCell();
-                    celdaStock.InnerText = lector["stock"].ToString();
+                    celdaStock.InnerText = lector["Stock"].ToString();
                     fila.Cells.Add(celdaStock);
 
                     HtmlTableCell celdaPrecio = new HtmlTableCell();
-                    celdaPrecio.InnerText = lector["precio"].ToString();
+                    celdaPrecio.InnerText = lector["Precio"].ToString();
                     fila.Cells.Add(celdaPrecio);
 
                     datatablesSimple.Rows.Add(fila);

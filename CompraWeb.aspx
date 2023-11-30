@@ -77,7 +77,7 @@
                         <thead>
                             <tr>
                                 <th>Codigo</th>
-                                <th>Marca</th>
+                                <th>Nombre</th>
                                 <th>Descripcion</th>
                                 <th>Stock</th>
                                 <th>Precio</th>
@@ -86,7 +86,7 @@
                         <tfoot>
                             <tr>
                                 <th>Codigo</th>
-                                <th>Marca</th>
+                                <th>Nombre</th>
                                 <th>Descripcion</th>
                                 <th>Stock</th>
                                 <th>Precio</th>
