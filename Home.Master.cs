@@ -14,11 +14,11 @@ namespace Login_InfoToolsSV
             Response.AppendHeader("Cache-control", "no-store");
 
             
-           /* if (Session["Usuario"] == null)
+            if (Session["Usuario"] == null)
             {
                 Response.Redirect("AvisoError.aspx");
             }
-           */
+           
 
 
         }

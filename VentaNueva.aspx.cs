@@ -32,7 +32,7 @@ namespace Login_InfoToolsSV
             string cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
-                string consulta = "SELECT IdProducto, Marca, Descripcion, IdCategoria, Stock, Precio, FechaRegistro FROM Producto";
+                string consulta = "SELECT IdProducto, Nombre, Descripcion, Categoria, Stock, Precio, FechaRegistro FROM Producto";
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                 DataTable tablaProductos = new DataTable();
@@ -63,7 +63,7 @@ namespace Login_InfoToolsSV
                 string productId = gridProductos.Rows[selectedIndex].Cells[0].Text; // ID
                 string productMarca = gridProductos.Rows[selectedIndex].Cells[1].Text; // Marca
                 string productName = gridProductos.Rows[selectedIndex].Cells[2].Text; // Nombre
-                int categoria = Convert.ToInt32(gridProductos.Rows[selectedIndex].Cells[3].Text); // Cat
+                String categoria = gridProductos.Rows[selectedIndex].Cells[3].Text; // Cat
                 int stock = Convert.ToInt32(gridProductos.Rows[selectedIndex].Cells[4].Text); // Stock
                 decimal price = Convert.ToDecimal(gridProductos.Rows[selectedIndex].Cells[5].Text); // Precio
                 DateTime fechaRegistro = Convert.ToDateTime(gridProductos.Rows[selectedIndex].Cells[6].Text); // Fecha Registro
@@ -135,6 +135,7 @@ namespace Login_InfoToolsSV
 
             // Limpia el carrito después de realizar la venta
             LimpiarCarrito();
+            CargarProductos();
         }
         protected decimal CalcularTotalVenta()
         {
@@ -158,6 +159,13 @@ namespace Login_InfoToolsSV
             Session.Remove("Carrito"); // Elimina el DataTable del carrito de la sesión
             gridCarrito.DataSource = null; // Establece el DataSource del GridView a null
             gridCarrito.DataBind(); // Vuelve a hacer el DataBind para reflejar los cambios
+        }
+
+        protected void Btnsalir_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Login_InfoToolsSV.aspx");
+            HttpContext.Current.Session.Abandon();
         }
     }
     
