@@ -28,8 +28,7 @@ namespace Login_InfoToolsSV
         }
         protected void CargarProductos()
         {
-            // Código para obtener los productos desde la base de datos
-            // Conexión a la base de datos
+
             string cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
@@ -48,21 +47,15 @@ namespace Login_InfoToolsSV
 
                 //Mostrar productos en el DropDownList para venta
                 ddlProductos.DataSource = tablaProductos;
-                //ddlProductos.DataTextField = "ID";
                 ddlProductos.DataValueField = "IdProducto";
-                //ddlProductos.DataTextField = "Nombre";
-                //ddlProductos.DataValueField = "descripcion";
-                /*ddlProductos.DataTextField = "Disponible";
-                ddlProductos.DataValueField = "stock";
-                ddlProductos.DataTextField = "Precio";
-                ddlProductos.DataValueField = "precio";*/
+
                 ddlProductos.DataBind();
             }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            int selectedIndex = ddlProductos.SelectedIndex;
+            int selectedIndex = ddlProductos.SelectedIndex - 1;
 
             if (selectedIndex >= 0)
             {
@@ -98,42 +91,77 @@ namespace Login_InfoToolsSV
                 dr["Precio"] = price;
                 decimal subtotal = price * quantity;
                 dr["Sub-Total"] = subtotal;
+                
 
                 dtCarrito.Rows.Add(dr);
 
                 // Actualizar el gridCarrito
                 gridCarrito.DataSource = dtCarrito;
                 gridCarrito.DataBind();
-                
+
                 // Actualizar la sesión con el DataTable modificado
                 Session["Carrito"] = dtCarrito;
+                // Calcular el total de la venta
+                decimal totalVenta = CalcularTotalVenta(); // Debes implementar esta función
+
+                // Actualizar el TextBox del total de la venta
+                TotalCompra.Text = totalVenta.ToString();
 
             }
         }
         protected void btnRealizarVenta_Click(object sender, EventArgs e)
         {
-            string connectionString = "tu_cadena_de_conexion"; // Reemplaza con tu conexión real
+            
+            string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand command = new SqlCommand("SP_ActuaProducto", connection))
+                connection.Open();
+
+                foreach (GridViewRow row in gridCarrito.Rows)
                 {
-                    command.CommandType = CommandType.StoredProcedure;
+                    int productId = Convert.ToInt32(row.Cells[0].Text); // Obtén el ID del producto
+                    int quantity = Convert.ToInt32(row.Cells[2].Text); // Obtén la cantidad del carrito
+                    // Aquí ejecutas el Stored Procedure para actualizar el stock
+                    using (SqlCommand command = new SqlCommand("sp_RegistrarCompra", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
 
-                    // Establece los parámetros del Stored Procedure
-                    command.Parameters.Add("@Id", SqlDbType.Int).Value = "ID";
-                    command.Parameters.Add("@Marca", SqlDbType.VarChar, 100).Value = "Marca";
-                    command.Parameters.Add("@Descripcion", SqlDbType.VarChar, 200).Value = "Nombre";
-                    command.Parameters.Add("@Categoria", SqlDbType.VarChar, 100).Value = "Categoria";
-                    command.Parameters.Add("@Stock", SqlDbType.Int).Value = "Stock";
-                    command.Parameters.Add("@Precio", SqlDbType.Decimal).Value = "Precio";
-                    command.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = "Fecha";
+                        // Establece los parámetros del Stored Procedure
+                        command.Parameters.Add("@Id", SqlDbType.Int).Value = productId;
+                        command.Parameters.Add("@Stock", SqlDbType.Int).Value = quantity;
 
-                    // Abre la conexión y ejecuta el Stored Procedure
-                    connection.Open();
-                    command.ExecuteNonQuery();
+                        command.ExecuteNonQuery(); // Ejecuta el Stored Procedure para actualizar el stock
+                    }
                 }
             }
+
+            // Limpia el carrito después de realizar la venta
+            LimpiarCarrito();
+        }
+        protected decimal CalcularTotalVenta()
+        {
+            decimal totalVenta = 0;
+
+            if (Session["Carrito"] != null)
+            {
+                DataTable dtCarrito = (DataTable)Session["Carrito"];
+                foreach (DataRow row in dtCarrito.Rows)
+                {
+                    decimal subtotal = Convert.ToDecimal(row["Sub-Total"]);
+                    totalVenta += subtotal;
+                }
+            }
+
+            return totalVenta;
+        }
+
+        void LimpiarCarrito()
+        {
+            Session.Remove("Carrito"); // Elimina el DataTable del carrito de la sesión
+            gridCarrito.DataSource = null; // Establece el DataSource del GridView a null
+            gridCarrito.DataBind(); // Vuelve a hacer el DataBind para reflejar los cambios
         }
     }
+
 }

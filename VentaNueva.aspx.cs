@@ -100,7 +100,11 @@ namespace Login_InfoToolsSV
                 
                 // Actualizar la sesión con el DataTable modificado
                 Session["Carrito"] = dtCarrito;
+                // Calcular el total de la venta
+                decimal totalVenta = CalcularTotalVenta(); // Debes implementar esta función
 
+                // Actualizar el TextBox del total de la venta
+                TotalVenta.Text = totalVenta.ToString();
             }
         }
         protected void btnRealizarVenta_Click(object sender, EventArgs e)
@@ -116,7 +120,7 @@ namespace Login_InfoToolsSV
                     int productId = Convert.ToInt32(row.Cells[0].Text); // Obtén el ID del producto
                     int quantity = Convert.ToInt32(row.Cells[2].Text); // Obtén la cantidad del carrito
                     // Aquí ejecutas el Stored Procedure para actualizar el stock
-                    using (SqlCommand command = new SqlCommand("SP_Venta", connection))
+                    using (SqlCommand command = new SqlCommand("sp_RegistrarVenta", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -132,6 +136,23 @@ namespace Login_InfoToolsSV
             // Limpia el carrito después de realizar la venta
             LimpiarCarrito();
         }
+        protected decimal CalcularTotalVenta()
+        {
+            decimal totalVenta = 0;
+
+            if (Session["Carrito"] != null)
+            {
+                DataTable dtCarrito = (DataTable)Session["Carrito"];
+                foreach (DataRow row in dtCarrito.Rows)
+                {
+                    decimal subtotal = Convert.ToDecimal(row["Sub-Total"]);
+                    totalVenta += subtotal;
+                }
+            }
+
+            return totalVenta;
+        }
+
         void LimpiarCarrito()
         {
             Session.Remove("Carrito"); // Elimina el DataTable del carrito de la sesión

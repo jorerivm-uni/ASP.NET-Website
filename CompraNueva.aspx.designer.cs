@@ -60,6 +60,24 @@ namespace Login_InfoToolsSV
         protected global::System.Web.UI.WebControls.GridView gridCarrito;
 
         /// <summary>
+        /// TextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox;
+
+        /// <summary>
+        /// TotalCompra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TotalCompra;
+
+        /// <summary>
         /// btnRealizarVenta control.
         /// </summary>
         /// <remarks>

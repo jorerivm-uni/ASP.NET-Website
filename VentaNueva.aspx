@@ -45,9 +45,11 @@
                             <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
                             <asp:BoundField DataField="Precio" HeaderText="Precio" />
                             <asp:BoundField DataField="Sub-Total" HeaderText="Sub-Total" />
-                            
+
                         </Columns>
                     </asp:GridView>
+                    <asp:TextBox ID="TextBox" runat="server" type="text" ReadOnly="true" Text="Total C$"/>
+                    <asp:TextBox ID="TotalVenta" runat="server" Type="Text" ReadOnly="true" />
                     <asp:Button ID="btnRealizarVenta" runat="server" Text="Finalizar Venta" OnClick="btnRealizarVenta_Click" />
 
             </div>
