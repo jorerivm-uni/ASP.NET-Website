@@ -177,8 +177,7 @@
                               <div>
 
         
-
-
+                             
                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
        
                                  <!--parte dinamica, cargar disenos de pagina-->
