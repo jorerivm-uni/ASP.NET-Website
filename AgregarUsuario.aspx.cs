@@ -148,7 +148,9 @@ namespace Login_InfoToolsSV
             Response.Redirect("VerUsuario.aspx");
         }
 
-        protected void Btnsalir_Click(object sender, EventArgs e)
+      
+
+        protected void Btnsalir_Click1(object sender, EventArgs e)
         {
             Session["Usuario"] = null;
             Response.Redirect("Login_InfoToolsSV.aspx");
