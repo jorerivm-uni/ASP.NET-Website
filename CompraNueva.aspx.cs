@@ -32,7 +32,7 @@ namespace Login_InfoToolsSV
             string cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
-                string consulta = "SELECT IdProducto, Marca, Descripcion, IdCategoria, Stock, Precio, FechaRegistro FROM Producto";
+                string consulta = "SELECT IdProducto, Nombre, Descripcion, Categoria, Stock, Precio, FechaRegistro FROM Producto";
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                 DataTable tablaProductos = new DataTable();
@@ -128,8 +128,8 @@ namespace Login_InfoToolsSV
                         command.CommandType = CommandType.StoredProcedure;
 
                         // Establece los parámetros del Stored Procedure
-                        command.Parameters.Add("@Id", SqlDbType.Int).Value = productId;
-                        command.Parameters.Add("@Stock", SqlDbType.Int).Value = quantity;
+                        command.Parameters.Add("@idProducto", SqlDbType.Int).Value = productId;
+                        command.Parameters.Add("@cantidad", SqlDbType.Int).Value = quantity;
 
                         command.ExecuteNonQuery(); // Ejecuta el Stored Procedure para actualizar el stock
                     }

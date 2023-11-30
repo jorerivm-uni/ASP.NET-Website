@@ -17,9 +17,9 @@
                     <asp:GridView ID="gridProductos" runat="server" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="IdProducto" HeaderText="ID" />
-                            <asp:BoundField DataField="Marca" HeaderText="Marca" />
+                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                             <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
-                            <asp:BoundField DataField="IdCategoria" HeaderText="Categoria" />
+                            <asp:BoundField DataField="Categoria" HeaderText="Categoria" />
                             <asp:BoundField DataField="Stock" HeaderText="Cantidad" />
                             <asp:BoundField DataField="Precio" HeaderText="Precio" />  
                             <asp:BoundField DataField="FechaRegistro" HeaderText="Fecha de Registro" />  

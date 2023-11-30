@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -21,8 +22,8 @@ namespace Login_InfoToolsSV
         private void LlenarTabla()
         {
             // Conexión a la base de datos
-            string connectionString = "Data Source=LAPTOP-V667GKAG;initial catalog=DBvarelaGym;integrated security=true";
-            using (SqlConnection conexion = new SqlConnection(connectionString))
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
                 // Consulta SQL para obtener datos de la tabla
                 string consulta = "SELECT  Idproducto, nombre, descripcion, stock, precio FROM Producto";
