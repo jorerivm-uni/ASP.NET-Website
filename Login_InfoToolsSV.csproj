@@ -96,7 +96,9 @@
     <Content Include="Recursos\CSS\Estilos.css" />
     <Content Include="Recursos\CSS\style.css" />
     <Content Include="Recursos\CSS\wow.min.js" />
+    <Content Include="CompraNueva.aspx" />
     <Content Include="VentaNueva.aspx" />
+    <Content Include="CompraWeb.aspx" />
     <Content Include="VentaWeb.aspx" />
     <Content Include="VerProducto.aspx" />
     <Content Include="VerProveedor.aspx" />
@@ -175,12 +177,26 @@
     <Compile Include="Proveedor.aspx.designer.cs">
       <DependentUpon>Proveedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CompraNueva.aspx.cs">
+      <DependentUpon>CompraNueva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompraNueva.aspx.designer.cs">
+      <DependentUpon>CompraNueva.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VentaNueva.aspx.cs">
       <DependentUpon>VentaNueva.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VentaNueva.aspx.designer.cs">
       <DependentUpon>VentaNueva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompraWeb.aspx.cs">
+      <DependentUpon>CompraWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompraWeb.aspx.designer.cs">
+      <DependentUpon>CompraWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="VentaWeb.aspx.cs">
       <DependentUpon>VentaWeb.aspx</DependentUpon>

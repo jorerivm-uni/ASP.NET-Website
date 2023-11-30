@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace Login_InfoToolsSV
 {
-    public partial class VentaNueva : System.Web.UI.Page
+    public partial class CompraNueva : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

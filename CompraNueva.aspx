@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="VentaNueva.aspx.cs" Inherits="Login_InfoToolsSV.VentaNueva" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="CompraNueva.aspx.cs" Inherits="Login_InfoToolsSV.CompraNueva" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Nueva Venta</h1>        
+        <h1 class="mt-4">Nueva Compra</h1>        
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>

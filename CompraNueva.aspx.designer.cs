@@ -11,7 +11,7 @@ namespace Login_InfoToolsSV
 {
 
 
-    public partial class VentaNueva
+    public partial class CompraNueva
     {
 
         /// <summary>
